@@ -10,3 +10,10 @@ export const fetchPosts = async ({
   );
   return res.data.results;
 };
+
+export const fetchLandMaps = async (): Promise<LandMap[]> => {
+  const res = await axios.get(
+    `https://prod-be.1acre.in/lands/landmaps/?seller_id=211`,
+  );
+  return res.data.results;
+};

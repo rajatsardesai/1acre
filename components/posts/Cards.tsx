@@ -22,20 +22,22 @@ const Cards = ({ posts }: Props) => {
         const {
           id,
           land_media,
-          total_price,
           land_size: {
             total_land_size_in_acres: { acres, cents },
           },
-          price_per_acre,
+          land_price: {
+            price_per_acre_crore: { lakh, crore },
+          },
+          total_price,
           total_land_size,
           division_info,
         } = post;
 
+        // Format price based on available data
         const displayPrice =
-          acres !== null
-            ? formatPrice(price_per_acre)
-            : formatPrice(total_price);
+          acres !== null ? formatPrice(lakh, crore) : formatPrice(total_price);
 
+        // Determine the pricing unit dynamically
         const unit =
           acres !== null
             ? "/acre"
@@ -58,6 +60,8 @@ const Cards = ({ posts }: Props) => {
                       <Image
                         src={media.image}
                         alt="land image"
+                        priority
+                        loading="eager"
                         width={372}
                         height={189}
                         className="rounded-t-lg object-cover w-full h-[189px]"

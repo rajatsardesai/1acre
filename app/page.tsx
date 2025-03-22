@@ -1,10 +1,13 @@
-import Maps from "@/components/Maps";
-import InfinitePosts from "@/components/InfinitePosts";
+import Maps from "@/components/maps/Maps";
+import InfinitePosts from "@/components/posts/InfinitePosts";
+import { GoogleMapsWrapper } from "@/components/maps/GoogleMapsWrapper";
 
 const Page = () => {
   return (
     <div className="root-container">
-      <Maps />
+      <GoogleMapsWrapper>
+        <Maps />
+      </GoogleMapsWrapper>
       <InfinitePosts />
     </div>
   );

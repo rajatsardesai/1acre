@@ -4,7 +4,7 @@ A responsive property listing grid with infinite scroll functionality using **Re
 
 ## Deployment
 
-🌐 [Live Demo](coming soon)
+🌐 [Live Demo](https://1acre-blue.vercel.app/)
 
 ## Project Setup Instructions
 
@@ -22,6 +22,11 @@ npm install
 ### Run the Development Server
 ```bash
 npm run dev
+```
+
+### Set your Google maps API key 
+```bash
+NEXT_PUBLIC_GOOGLE_MAPS_API_KEY=your_api_key
 ```
 
 ## Tech Stack
